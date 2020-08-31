@@ -6,15 +6,18 @@ const templatesDir = path.resolve(__dirname, "../templates");
 const render = employees => {
   const html = [];
 
-  html.push(employees
+  html.push(
+    employees
     .filter(employee => employee.getRole() === "Manager")
     .map(manager => renderManager(manager))
   );
-  html.push(employees
+  html.push(
+    employees
     .filter(employee => employee.getRole() === "Engineer")
     .map(engineer => renderEngineer(engineer))
   );
-  html.push(employees
+  html.push(
+    employees
     .filter(employee => employee.getRole() === "Intern")
     .map(intern => renderIntern(intern))
   );
@@ -23,8 +26,11 @@ const render = employees => {
 
 };
 
-const renderManager = manager => {
-  let template = fs.readFileSync(path.resolve(templatesDir, "manager.html"), "utf8");
+const renderManager = (manager) => {
+  let template = fs.readFileSync(
+    path.resolve(templatesDir, "manager.html"), 
+    "utf8"
+    );
   template = replacePlaceholders(template, "name", manager.getName());
   template = replacePlaceholders(template, "role", manager.getRole());
   template = replacePlaceholders(template, "email", manager.getEmail());
@@ -33,8 +39,11 @@ const renderManager = manager => {
   return template;
 };
 
-const renderEngineer = engineer => {
-  let template = fs.readFileSync(path.resolve(templatesDir, "engineer.html"), "utf8");
+const renderEngineer = (engineer) => {
+  let template = fs.readFileSync(
+    path.resolve(templatesDir, "engineer.html"), 
+    "utf8"
+    );
   template = replacePlaceholders(template, "name", engineer.getName());
   template = replacePlaceholders(template, "role", engineer.getRole());
   template = replacePlaceholders(template, "email", engineer.getEmail());
@@ -43,8 +52,11 @@ const renderEngineer = engineer => {
   return template;
 };
 
-const renderIntern = intern => {
-  let template = fs.readFileSync(path.resolve(templatesDir, "intern.html"), "utf8");
+const renderIntern = (intern) => {
+  let template = fs.readFileSync(
+    path.resolve(templatesDir, "intern.html"), 
+    "utf8"
+    );
   template = replacePlaceholders(template, "name", intern.getName());
   template = replacePlaceholders(template, "role", intern.getRole());
   template = replacePlaceholders(template, "email", intern.getEmail());
@@ -53,8 +65,11 @@ const renderIntern = intern => {
   return template;
 };
 
-const renderMain = html => {
-  const template = fs.readFileSync(path.resolve(templatesDir, "main.html"), "utf8");
+const renderMain = (html) => {
+  const template = fs.readFileSync(
+    path.resolve(templatesDir, "main.html"), 
+    "utf8"
+    );
   return replacePlaceholders(template, "team", html);
 };
 
