@@ -6,27 +6,27 @@ const templatesDir = path.resolve(__dirname, "../templates");
 const render = employees => {
   const html = [];
 
-  html.push(
+  html.push( //Render Manager
     employees
     .filter(employee => employee.getRole() === "Manager")
     .map(manager => renderManager(manager))
   );
-  html.push(
+  html.push( //Render Engineer
     employees
     .filter(employee => employee.getRole() === "Engineer")
     .map(engineer => renderEngineer(engineer))
   );
-  html.push(
+  html.push( //Render Intern
     employees
     .filter(employee => employee.getRole() === "Intern")
     .map(intern => renderIntern(intern))
   );
 
-  return renderMain(html.join(""));
+  return renderMain(html.join("")); //Renders Roles Together
 
 };
 
-const renderManager = (manager) => {
+const renderManager = (manager) => { //Renders Manager's Info
   let template = fs.readFileSync(
     path.resolve(templatesDir, "manager.html"), 
     "utf8"
@@ -39,7 +39,7 @@ const renderManager = (manager) => {
   return template;
 };
 
-const renderEngineer = (engineer) => {
+const renderEngineer = (engineer) => { //Renders Engineer's Info
   let template = fs.readFileSync(
     path.resolve(templatesDir, "engineer.html"), 
     "utf8"
@@ -52,7 +52,7 @@ const renderEngineer = (engineer) => {
   return template;
 };
 
-const renderIntern = (intern) => {
+const renderIntern = (intern) => { //Render Intern info
   let template = fs.readFileSync(
     path.resolve(templatesDir, "intern.html"), 
     "utf8"
@@ -65,7 +65,7 @@ const renderIntern = (intern) => {
   return template;
 };
 
-const renderMain = (html) => {
+const renderMain = (html) => { // Render Main Team Info
   const template = fs.readFileSync(
     path.resolve(templatesDir, "main.html"), 
     "utf8"

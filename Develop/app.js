@@ -1,9 +1,11 @@
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+
+const Engineer = require("./lib/Engineer");
+const Manager = require("./lib/Manager");
+const Intern = require("./lib/Intern");
+
 ​
 const OUTPUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -12,7 +14,7 @@ const render = require("./lib/htmlRenderer");
 ​let employeesArr = []
 
 const generateTeam = async function () {
-    // Ask for number of employees
+    // Ask How Many Employees
     let numberOfEmployees = await inquirer.prompt([
         {
             type: "number",
@@ -70,7 +72,7 @@ const generateTeam = async function () {
 // Ask Questions related to employee roles
 async function EmployeeType(role, name, id, email) {
     switch (role) {
-        case "Engineer":
+        case "Engineer": //Ask Qeustions for Engineer
             let gitHub = await inquirer.prompt([
                 {
                     type: "input",
@@ -82,7 +84,7 @@ async function EmployeeType(role, name, id, email) {
             });
 
             break;
-        case "Manager":
+        case "Manager": //Ask Questions for Manager
             let office = await inquirer.prompt([
                 {
                     type: "input",
@@ -94,7 +96,7 @@ async function EmployeeType(role, name, id, email) {
             });
 
             break;
-        case "Intern":
+        case "Intern": //Ask Questions for Itern
             let school = await inquirer.prompt([
                 {
                     type: "input",
@@ -107,19 +109,19 @@ async function EmployeeType(role, name, id, email) {
             break;
     }
 }
-
+//Create Manager
 function createManager(name = null, id = null, email = null, officeNumber = null) {
     return new Manager(name, id, email, officeNumber);
 }
-
+//Create Engineer
 function createEngineer(name = null, id = null, email = null, github = null) {
     return new Engineer(name, id, email, github);
 }
-
+//Create Intern
 function createIntern(name = null, id = null, email = null, school = null) {
     return new Intern(name, id, email, school);
 }
 
 
-// Generate Team
+// Generate Team Profile
 generateTeam();
