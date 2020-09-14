@@ -11,6 +11,7 @@
 
 ## Title
 10. Team Profile Generator
+![Screenshot](https://github.com/ksingh-1/10.Team-Profile-Generator/blob/master/Team%20Amazing%20Generated%20Pic.PNG)
 
 ## Description
 This application will prompt the user for information about the team manager and then information about the team members
