@@ -10,7 +10,7 @@
 </p>
 
 ## Title
-10 Team Profile Generator
+10. Team Profile Generator
 
 ## Description
 This application will prompt the user for information about the team manager and then information about the team members
