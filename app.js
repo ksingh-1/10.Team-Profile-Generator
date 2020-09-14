@@ -205,7 +205,7 @@ function compileTeam() {
     `
     htmlArray.push(htmlEnd);
 
-    fs.writeFile(`./Develop${finalTeamArray[0]}.html`, htmlArray.join(""), function (err) {
+    fs.writeFile(`./Team_${finalTeamArray[0]}.html`, htmlArray.join(""), function (err) {
 
     })
 }
