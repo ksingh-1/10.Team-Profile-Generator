@@ -61,4 +61,4 @@ kulpreet.s18@gmail.com
 If you have any questions about the repo contact me on GitHub at (https://github.com/ksingh-1)
 or reach me directly at <kulpreet.s18@gmail.com>.
 
-![final-screen](https://github.com/ksingh-1)
+![final-screen](https://github.com/ksingh-1/10.Team-Profile-Generator/blob/master/AppGifSmall.gif)
